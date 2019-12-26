@@ -1,13 +1,15 @@
 const container = document.getElementById("container");
 let rows = document.getElementsByClassName('gridRow');
 let cells = document.getElementsByClassName('gridCell');
+let newRows = 16;
+let newCells = 16;
 
 
 defaultGrid();
 //creates a default grid with 16x16
 function defaultGrid() {
-    makeRows(16);
-    makeColumns(16);
+    makeRows(newRows);
+    makeColumns(newCells);
 }
 
 function makeRows(rowNum) {
@@ -26,9 +28,24 @@ function makeColumns(colNum) {
     }
 }
 
-//event listeners for hover effect
-document.getElementsByClassName("gridRow").addEventListener("onmouseover", function() {
-    rows.style.color = "gray";
-});
+
+for (var i = 0; i < cells.length; i++) {
+    cells[i].addEventListener('mouseenter', function() {
+        this.style.backgroundColor = "black";
+    });
+}   
+
+function reset() {
+    for(var i = 0; i < cells.length; i++) {
+        cells[i].style.backgroundColor = "white";
+    }
+    newRows = window.prompt("Enter new rows dimensions: ")
+    newCells = window.prompt("Enter new cells dimensions: ")
+    
+}
+
+const btnReset = document.getElementById("resetButton");
+
+btnReset.addEventListener('click', reset);
 
 
