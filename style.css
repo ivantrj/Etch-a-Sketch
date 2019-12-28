@@ -1,14 +1,20 @@
 .gridCell {
-    border: 1px solid gray;
     min-width: 20px;
     min-height: 20px;
     display: inline-block;
     margin-right: 2px;
+    background-color: orange;
+    position: static;
   } 
 
   #container {
     text-align: center;
-  }
+    max-width: 540px;
+    max-height: 540px;
+    max-inline-size: inherit;
+    margin: auto;
+    display: block;
+    }
 
   button {
     background-color:#e86969;
@@ -26,4 +32,9 @@
 
   .buttonHolder {
     text-align: center;
+    position: relative;
+  }
+
+  body {
+    background-image: url("https://www.imgbase.info/images/safe-wallpapers/digital_art/1_miscellaneous_digital_art/55864_1_miscellaneous_digital_art_landscape_drawing.jpg");
   }
